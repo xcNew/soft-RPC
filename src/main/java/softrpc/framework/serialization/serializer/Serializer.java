@@ -16,7 +16,7 @@ public interface Serializer {
     public <T> byte[] serialize(T t);
 
     /**
-     * 
+     * 反序列化
      * 
      * @param data 序列化的byte数组
      * @param clazz 指定的反序列化后的Class对象

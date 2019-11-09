@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87b76c61-fd35-4be7-9916-9d68d052200e" name="Default" comment="日志文件">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../soft-rpc/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soft-rpc/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../soft-rpc/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soft-rpc/.idea/misc.xml" afterPath="$PROJECT_DIR$/../soft-rpc/.idea/misc.xml" />
+    <list default="true" id="87b76c61-fd35-4be7-9916-9d68d052200e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soft-rpc/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../soft-rpc/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soft-rpc/pom.xml" afterPath="$PROJECT_DIR$/../soft-rpc/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soft-rpc/soft-rpc.iml" afterPath="$PROJECT_DIR$/../soft-rpc/soft-rpc.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/Serializer.java" afterPath="$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/Serializer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/../soft-rpc/out/" />
     <ignored path="$PROJECT_DIR$/../soft-rpc/target/" />
@@ -24,8 +18,44 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../soft-rpc/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
+            <state relative-caret-position="-425">
               <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="note.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../soft-rpc/note/note.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-1782">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../soft-rpc/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="soft-rpc.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../soft-rpc/soft-rpc.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -34,8 +64,8 @@
       <file leaf-file-name="Serializer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/Serializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+            <state relative-caret-position="362">
+              <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -44,8 +74,8 @@
       <file leaf-file-name="HessianSerializer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/HessianSerializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
-              <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+            <state relative-caret-position="945">
+              <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProtoStuffSerializer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProtoStuffSerializer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/ProtoStuffSerializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+            <state relative-caret-position="-984">
+              <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#812#842#0" expanded="true" />
@@ -107,34 +137,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uiDesigner.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../soft-rpc/.idea/uiDesigner.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../soft-rpc/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1573321335385" expanded="true" signature="59087:59318" ph="..." />
-                <marker date="1573321335385" expanded="true" signature="59087:59333" ph="..." />
-                <marker date="1573321335385" expanded="true" signature="59087:59347" ph="..." />
-                <marker date="1573321335385" expanded="true" signature="59087:59362" ph="..." />
-                <marker date="1573321335385" expanded="true" signature="59120:59298" ph="..." />
-                <marker date="1573321335385" expanded="true" signature="59160:59264" ph="..." />
-                <marker date="1573321335385" expanded="true" signature="59181:59242" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -163,7 +165,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/def.java" />
-        <option value="$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/Serializer.java" />
         <option value="$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/DefaultSerializer.java" />
         <option value="$PROJECT_DIR$/../soft-rpc/src/test/java/softrpc/framework/serialization/serializer/JDKSerializerTest.java" />
         <option value="$PROJECT_DIR$/../soft-rpc/pom.xml" />
@@ -172,6 +173,9 @@
         <option value="$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/dog.java" />
         <option value="$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/ProtoStuffSerializer.java" />
         <option value="$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/Main.java" />
+        <option value="$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/Serializer.java" />
+        <option value="$PROJECT_DIR$/../soft-rpc/README.md" />
+        <option value="$PROJECT_DIR$/../soft-rpc/note.md" />
       </list>
     </option>
   </component>
@@ -188,8 +192,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-21" />
-    <option name="y" value="309" />
+    <option name="x" value="-159" />
+    <option name="y" value="264" />
     <option name="width" value="1918" />
     <option name="height" value="1018" />
   </component>
@@ -224,144 +228,11 @@
             <path>
               <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
               <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="softrpc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="softrpc" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="softrpc" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="serialization" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="softrpc" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="serialization" type="462c0819:PsiDirectoryNode" />
-              <item name="serializer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="softrpc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="softrpc" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soft-rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="softrpc" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="serialization" type="462c0819:PsiDirectoryNode" />
+              <item name="note" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.dyuproject.protostuff:protostuff-api:1.0.8" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.dyuproject.protostuff:protostuff-api:1.0.8" type="70bed36:NamedLibraryElementNode" />
-              <item name="protostuff-api-1.0.8.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.dyuproject.protostuff:protostuff-api:1.0.8" type="70bed36:NamedLibraryElementNode" />
-              <item name="protostuff-api-1.0.8.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.dyuproject.protostuff:protostuff-api:1.0.8" type="70bed36:NamedLibraryElementNode" />
-              <item name="protostuff-api-1.0.8.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dyuproject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="softrpc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.dyuproject.protostuff:protostuff-api:1.0.8" type="70bed36:NamedLibraryElementNode" />
-              <item name="protostuff-api-1.0.8.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dyuproject" type="462c0819:PsiDirectoryNode" />
-              <item name="protostuff" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -384,10 +255,14 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="softrpc.framework.serialization.serializer" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\soft-rpc" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\soft-rpc" />
       <recent name="C:\soft-rpc\src\main\resources" />
     </key>
   </component>
@@ -590,7 +465,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573237902822</updated>
-      <workItem from="1573237905265" duration="20701000" />
+      <workItem from="1573237905265" duration="23047000" />
     </task>
     <task id="LOCAL-00001" summary="通用的序列化接口">
       <created>1573239225518</created>
@@ -606,11 +481,25 @@
       <option name="project" value="LOCAL" />
       <updated>1573239555933</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="序列化接口及实现工具">
+      <created>1573321590933</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573321590934</updated>
+    </task>
+    <task id="LOCAL-00004" summary="更新注释">
+      <created>1573322048285</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1573322048286</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20701000" />
+    <option name="totallyTimeSpent" value="23047000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -623,7 +512,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961586" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -634,8 +522,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961586" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25154895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961586" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25154895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20570013" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -720,7 +608,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="通用的序列化接口" />
     <MESSAGE value="日志文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="日志文件" />
+    <MESSAGE value="序列化接口及实现工具" />
+    <MESSAGE value="更新注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新注释" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -734,13 +624,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1573321335385" expanded="true" signature="59087:59318" ph="..." />
-            <marker date="1573321335385" expanded="true" signature="59087:59333" ph="..." />
-            <marker date="1573321335385" expanded="true" signature="59087:59347" ph="..." />
-            <marker date="1573321335385" expanded="true" signature="59087:59362" ph="..." />
-            <marker date="1573321335385" expanded="true" signature="59120:59298" ph="..." />
-            <marker date="1573321335385" expanded="true" signature="59160:59264" ph="..." />
-            <marker date="1573321335385" expanded="true" signature="59181:59242" ph="..." />
+            <marker date="1573323841900" expanded="true" signature="53616:53847" ph="..." />
+            <marker date="1573323841900" expanded="true" signature="53616:53862" ph="..." />
+            <marker date="1573323841900" expanded="true" signature="53616:53876" ph="..." />
+            <marker date="1573323841900" expanded="true" signature="53616:53891" ph="..." />
+            <marker date="1573323841900" expanded="true" signature="53649:53827" ph="..." />
+            <marker date="1573323841900" expanded="true" signature="53689:53793" ph="..." />
+            <marker date="1573323841900" expanded="true" signature="53710:53771" ph="..." />
           </folding>
         </state>
       </provider>
@@ -793,37 +683,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../soft-rpc/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/Serializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/dubbo/2.6.6/dubbo-2.6.6.jar!/com/alibaba/com/caucho/hessian/io/HessianOutput.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/HessianSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,6 +724,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/HessianSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/JDKSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -870,14 +744,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/ProtoStuffSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+        <state relative-caret-position="-984">
+          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#812#842#0" expanded="true" />
             <element signature="e#1163#1193#0" expanded="true" />
             <element signature="e#1738#1768#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../soft-rpc/src/main/java/softrpc/framework/serialization/serializer/Serializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../soft-rpc/soft-rpc.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../soft-rpc/笔记.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-2485">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../soft-rpc/note.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2602">
+            <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../soft-rpc/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-425">
+          <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../soft-rpc/note/note.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-1782">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../soft-rpc/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

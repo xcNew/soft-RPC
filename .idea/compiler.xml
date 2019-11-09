@@ -9,8 +9,8 @@
         <module name="soft-rpc" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="soft-rpc" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="soft-rpc" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

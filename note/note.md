@@ -60,7 +60,7 @@ RPC框架的目标就是要2~8这些步骤都封装起来，让用户对这些�
 
 #### 常用的序列化工具介绍
 
-**JDK默认的序列化**
+**JDK默认的序列化工具**
 
 > JAVA原生序列化方式，主要通过对象输入流ObjectInputStream和对象输出流ObjectOutputStream来实现，序列化对象需要实现Serializable接口。
 
@@ -100,4 +100,24 @@ protostuff 基于Google protobuf，但是提供了更多的功能和更简易的
 
 在性能上，protostuff不输原生的protobuf，甚至有反超之势。
 
+#### **序列化工具引擎**
 
+本项目用到三种:Default / Hessian / ProtoStuff， 一个Serializer接口有多种实现类, 如何优雅的进行选择? 使用可配置化的序列化工具引擎，有两种实现思路：
+
+- 工厂模式方案：
+
+  添加一个工厂类, 提供根据名称获取Serializer实现类的方法, 最后用一个Engine类即可以实现优雅的选择。这样做的缺陷是每次序列化/反序列化请求都需要生成新的Serializer，消耗存储空间。
+
+- 使用Map+Enum枚举类：
+
+   添加一个枚举类, 其中主要存储代表不同实现类的枚举值。在Engine类里新增常量map， key存储枚举类里的不同枚举，value存储对应具体的Serializer实现类，Engine类加载时在static代码块初始化map，根据这个传入的Serializer名称在map中找对应的实现类对象，执行实际的功能方法。**可以解决单例问题**。
+
+  <img src="img\image-20191110180140681.png" alt="image-20191110180140681" style="zoom:80%;" />
+  
+  **FactoryBean的作用**
+  
+  Spring 中有两种类型的Bean，一种是普通Bean，另一种是工厂Bean 即 FactoryBean。FactoryBean跟普通Bean不同，其返回的对象不是指定类的一个实例，而是该FactoryBean的getObject方法所返回的对象。创建出来的对象是否属于单例由isSingleton中的返回决定。
+  
+  一般情况下，Spring通过反射机制利用<bean>的class属性指定实现类实例化Bean，在某些情况下，实例化Bean过程比较复杂，如果按照传统的方式，则需要在<bean>中提供大量的配置信息。配置方式的灵活性是受限的，这时采用编码的方式可能会得到一个简单的方案。Spring为此提供了一个org.springframework.bean.factory.FactoryBean的工厂类接口，用户可以通过实现该接口定制实例化Bean的逻辑。FactoryBean接口对于Spring框架来说占用重要的地位，Spring自身就提供了70多个FactoryBean的实现。它们隐藏了实例化一些复杂Bean的细节，给上层应用带来了便利。
+  
+  FactoryBean 通常是用来创建比较复杂的bean，一般的bean 直接用xml配置即可，但如果一个bean的创建过程中涉及到很多其他的bean 和复杂的逻辑，用xml配置比较困难，这时可以考虑用FactoryBean。

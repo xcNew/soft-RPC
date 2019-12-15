@@ -12,26 +12,36 @@ public enum SerializerType {
     /**
      * JDK默认的序列化工具
      */
-    JDKSerializer("Default"),
+    JDKSerializer("Default",0),
 
     /**
      *  Hessian
      */
-    HessianSerianlizer("Hessian"),
+    HessianSerianlizer("Hessian",1),
 
     /**
      *  ProtoStuff
      */
-    ProtoStuffSerializer("ProtoStuff");
+    ProtoStuffSerializer("ProtoStuff",2);
 
     private String serializeType;
+    private int serializeCode;
 
     public String getSerializeType() {
         return serializeType;
     }
 
+    public int getSerializeCode() {
+        return serializeCode;
+    }
+
     SerializerType(String serializeType){
         this.serializeType = serializeType;
+    }
+
+    SerializerType(String serializeType,int serializeCode){
+        this.serializeType = serializeType;
+        this.serializeCode = serializeCode;
     }
 
 
@@ -47,4 +57,16 @@ public enum SerializerType {
         // 如果传入的type都不匹配则返回JDK默认序列化工具
         return JDKSerializer;
     }
+
+    public static SerializerType getByCode(int serializeCode){
+        switch (serializeCode){
+            case 1:
+                return HessianSerianlizer;
+            case 2:
+                return ProtoStuffSerializer;
+            default:
+                return JDKSerializer;
+        }
+    }
+
 }

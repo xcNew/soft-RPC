@@ -24,33 +24,33 @@ public enum SerializerType {
      */
     ProtoStuffSerializer("ProtoStuff",2);
 
-    private String serializeType;
+    private String serializeName;
     private int serializeCode;
 
-    public String getSerializeType() {
-        return serializeType;
+    public String getSerializeName() {
+        return serializeName;
     }
 
     public int getSerializeCode() {
         return serializeCode;
     }
 
-    SerializerType(String serializeType){
-        this.serializeType = serializeType;
+    SerializerType(String serializeName){
+        this.serializeName = serializeName;
     }
 
-    SerializerType(String serializeType,int serializeCode){
-        this.serializeType = serializeType;
+    SerializerType(String serializeName,int serializeCode){
+        this.serializeName = serializeName;
         this.serializeCode = serializeCode;
     }
 
 
-    public static SerializerType getByType(String serializeType){
-        if (serializeType.isEmpty()) {
+    public static SerializerType getByType(String serializeName){
+        if (serializeName.isEmpty()) {
             return JDKSerializer;
         }
         for (SerializerType serialize : SerializerType.values()){
-            if(serializeType.equalsIgnoreCase(serialize.getSerializeType())){
+            if(serializeName.equalsIgnoreCase(serialize.getSerializeName())){
                 return serialize;
             }
         }

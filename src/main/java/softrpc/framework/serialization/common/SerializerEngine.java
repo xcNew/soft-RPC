@@ -16,9 +16,9 @@ public class SerializerEngine {
      * @param   serializerType 指定的序列化协议
      * @return 序列化后的字节数组
      */
-    public static <T> byte[] serialize(T t, String serializerType){
+    public static <T> byte[] serialize(T t, SerializerType serializerType){
         // 通过工厂获取指定的Serializer
-        Serializer serializer = SerializerFactory.getSerializer(serializerType);
+        Serializer serializer = SerializerFactory.getSerializer(serializerType.getSerializeName());
         return serializer.serialize(t);
     }
 
@@ -35,3 +35,5 @@ public class SerializerEngine {
         return serializer.deserialize(data, clazz);
     }
 }
+
+

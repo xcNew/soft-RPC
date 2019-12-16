@@ -7,6 +7,11 @@
     <groupId>com.xctian.rpc</groupId>
     <artifactId>soft-rpc</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <org.slf4j.slf4j-log4j12.version>1.7.2</org.slf4j.slf4j-log4j12.version>
+        <com.google.guava.version>19.0</com.google.guava.version>
+    </properties>
     <build>
         <plugins>
             <plugin>
@@ -49,6 +54,28 @@
             <groupId>org.objenesis</groupId>
             <artifactId>objenesis</artifactId>
             <version>2.6</version>
+        </dependency>
+
+        <!--日志-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${org.slf4j.slf4j-log4j12.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.32.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${com.google.guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>m2.repository.org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.1.3.RELEASE</version>
         </dependency>
     </dependencies>
 

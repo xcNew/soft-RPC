@@ -26,6 +26,13 @@ public class NettyDecodeHandler extends ByteToMessageDecoder {
     private Class<?> genericClass;
 
     /**
+     * 构造解码器必须提供反序列化的对象类型
+     */
+    public NettyDecodeHandler(Class<?> genericClass) {
+        this.genericClass = genericClass;
+    }
+
+    /**
      * 解码器重写decode方法，decode方法处理完成后，会继续后面的传递处理：将list结果列表传递到下一个InboundHandler
      * @param ctx
      * @param in
@@ -41,7 +48,7 @@ public class NettyDecodeHandler extends ByteToMessageDecoder {
         }
         in.markReaderIndex();
         int serializerCode = in.readInt();
-        String serializer = SerializerType.getByCode(serializerCode).getSerializeType();
+        String serializer = SerializerType.getByCode(serializerCode).getSerializeName();
         int dataSize = in.readInt();
         if(dataSize < 0){
             ctx.close();

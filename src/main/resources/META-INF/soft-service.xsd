@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.soft-rpc.com/schema/soft-service"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:beans="http://www.springframework.org/schema/beans"
+            targetNamespace="http://www.soft-rpc.com/schema/soft-service"
+            elementFormDefault="qualified">
+    <!-- 该句能否去掉？ -->
+    <xsd:import namespace="http://www.springframework.org/schema/beans"/>
+
+    <xsd:element name="service">
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="beans:identifiedType">
+                    <xsd:attribute name="interface" type="xsd:string" use="required"/>
+                    <xsd:attribute name="timeout" type="xsd:int" use="required"/>
+                    <xsd:attribute name="serverPort" type="xsd:int" use="required"/>
+                    <xsd:attribute name="ref" type="xsd:string" use="required"/>
+                    <!--可选配置均有默认值-->
+                    <xsd:attribute name="weight" type="xsd:int" use="optional"/>
+                    <xsd:attribute name="workThreads" type="xsd:int" use="optional"/>
+                    <xsd:attribute name="groupName" type="xsd:string" use="optional"/>
+                    <xsd:attribute name="appName" type="xsd:string" use="optional"/>
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

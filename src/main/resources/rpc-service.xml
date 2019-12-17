@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:soft="http://www.soft-rpc.com/schema/soft-service"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.soft-rpc.com/schema/soft-service http://www.soft-rpc.com/schema/soft-service.xsd">
+
+    <!--发布远程服务-->
+    <bean id="Service2imp1" class="softrpc.framework.test.service.imp.Service2imp1"/>
+    <soft:service id="Service12Register1"
+                  interface="softrpc.framework.test.service.Service2"
+                  timeout="2000"
+                  serverPort="8081"
+                  ref="Service2imp1"
+                  weight="50"
+                  workThreads="100"
+                  appName="soft"
+                  groupName="default"/>
+    <!--同一主机支持对同一接口发布不同的实现类-->
+    <bean id="Service2imp2" class="softrpc.framework.test.service.imp.Service2imp2"/>
+    <soft:service id="Service12Register2"
+                  interface="softrpc.framework.test.service.Service2"
+                  timeout="2000"
+                  serverPort="8082"
+                  ref="Service2imp2"
+                  weight="100"
+                  workThreads="100"
+                  appName="soft"
+                  groupName="default"/>
+    <!--同一主机支持发布多个接口的服务-->
+    <bean id="Service1" class="softrpc.framework.test.service.imp.Service1imp"/>
+    <soft:service id="Service1Register"
+                  interface="softrpc.framework.test.service.Service1"
+                  timeout="2000"
+                  serverPort="8083"
+                  ref="Service1"
+                  weight="50"
+                  workThreads="100"
+                  appName="soft"
+                  groupName="default"/>
+
+</beans>
+
+
+
+
+
+
+
+

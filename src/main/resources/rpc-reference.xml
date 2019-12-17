@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:soft="http://www.soft-rpc.com/schema/soft-reference"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.soft-rpc.com/schema/soft-reference http://www.soft-rpc.com/schema/soft-reference.xsd">
+    <!--引入远程服务-->
+    <soft:reference id="Service1"
+                   appName="soft"
+                   interface="softrpc.framework.test.service.Service1"
+                   clusterStrategy="WeightRandom"
+                   timeout="2000"
+                   groupName="default"/>
+    <!--同一台主机可以引入多个服务-->
+    <soft:reference id="Service2"
+                    appName="soft"
+                    interface="softrpc.framework.test.service.Service2"
+                    clusterStrategy="WeightRandom"
+                    timeout="2000"
+                    groupName="default"/>
+</beans>
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-package softrpc.framework.zookeeper;
+package softrpc.framework.zookeeper.message;
 
 import java.util.UUID;
 

@@ -13,6 +13,7 @@ import softrpc.framework.utils.PropertyConfigUtil;
 import softrpc.framework.zookeeper.message.InvokerRegisterMessage;
 import softrpc.framework.zookeeper.message.ProviderRegisterMessage;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -114,7 +115,7 @@ public class RegisterCenter implements RegisterCenter4Governance, RegisterCenter
         List<ProviderRegisterMessage> providerRegisterMessages = null;
         // 创建服务接口的命名空间，即appName+servicePath
         final String nameSpace = invoker.getAppName() + "/" + invoker.getServicePath();
-        // 加锁，防止多线程下重复创建
+        // 对RegisterCenter加锁的原因是避免注册provider的同时注册有其他线程注册invoker，导致不同步
         synchronized (RegisterCenter.class) {
             // 创建invoker命名空间（持久结点）
             String invokerPath = ROOT_PATH + "/" + nameSpace + "/" + INVOKER_TYPE;
@@ -175,23 +176,74 @@ public class RegisterCenter implements RegisterCenter4Governance, RegisterCenter
         }
     }
 
+    /**
+     * 注册单个Provider
+     *
+     * @param provider 需要注册的provider
+     */
     @Override
-    public void registerProvider(ProviderRegisterMessage providerRegisterMessage) {
+    public void registerProvider(ProviderRegisterMessage provider) {
+        long startTime = System.currentTimeMillis();
+        // 服务接口命名空间
+        final String nameSpace = provider.getAppName() + "/" + provider.getServicePath();
+        // 对RegisterCenter加锁的原因是避免注册provider的同时注册有其他线程注册invoker，导致不同步
+        synchronized (RegisterCenter.class){
+            // ROOT_PATH/应用名/接口限定名/provider，创建永久节点
+            String providerPath = ROOT_PATH + "/" + nameSpace + "/" + PROVIDER_TYPE;
+            if(!zkClient.exists(providerPath)){
+                zkClient.createPersistent(providerPath,true);
+            }
+            // 注册provider（临时节点)，并创建
+            String serviceNode = providerPath + "/" + JSON.toJSONString(provider);
+            if(!zkClient.exists(serviceNode)){
+                zkClient.createEphemeral(serviceNode);
+            }
+            String invokerPath = ROOT_PATH + "/" + nameSpace + "/" +INVOKER_TYPE;
+            if(!zkClient.exists(invokerPath)){
+                zkClient.createPersistent(invokerPath);
+            }
+            boolean firstAdd = inovokerNodeListenerSet.add(invokerPath);
+            if(firstAdd){
+                zkClient.subscribeChildChanges(invokerPath, new IZkChildListener() {
+                    @Override
+                    public void handleChildChange(String parentPath, List<String> currentChilds) throws Exception {
+                        if(null == currentChilds || currentChilds.size() == 0){
+                            INVOKER_MAP.remove(nameSpace);
+                            LOGGER.warn("[{}]节点发生了变化，该服务节点下已无调用者",parentPath);
+                            return;
+                        }
+                        // 反序列化还原invoker，然后更新invoker map
+                        List<InvokerRegisterMessage> newInvokerList = new ArrayList<>();
+                        for(String each : currentChilds){
+                            newInvokerList.add(JSON.parseObject(each,InvokerRegisterMessage.class));
+                        }
+                        INVOKER_MAP.put(nameSpace,newInvokerList);
+                        LOGGER.info("[{}]节点发生变化，重新加载该节点下的所有invoker如下：",parentPath);
+                        System.out.println(newInvokerList);
+                    }
+                });
+            }
+        }
+        long duration = System.currentTimeMillis() - startTime;
+        LOGGER.info("注册服务耗时{}ms[服务路径为：/zookeeper/{}/{}]",duration,nameSpace,provider.getRefId());
 
     }
 
     @Override
     public Map<String, List<InvokerRegisterMessage>> getInvokersOfProvider() {
-        return null;
-    }
-
-    @Override
-    public Map<String, List<String>> getProvidersOfInvoker() {
-        return null;
+        return INVOKER_MAP;
     }
 
     @Override
     public Map<String, List<ProviderRegisterMessage>> getProviderMap() {
+        return PROVIDER_MAP;
+    }
+
+    @Override
+    public Map<String, List<String>> getProvidersOfInvoker() {
+        // TODO
         return null;
     }
+
+
 }

@@ -58,7 +58,7 @@ public class PropertyConfigUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        // to be finished
         zkService = properties.getProperty("soft.rpc.zookeeper.address");
         serverSerializer = SerializerType.getByType(properties.getProperty("soft.rpc.server.serializer","Default"));
 

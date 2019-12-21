@@ -49,6 +49,6 @@ public class NettyEncodeHandler extends MessageToByteEncoder {
         out.writeBytes(data);
         long duration = System.currentTimeMillis() - startTime;
         LOGGER.info("[{}]序列化协议编码耗时{}ms",serializeType.getSerializeName(),duration);
-
+        
     }
 }

@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import softrpc.framework.serialization.common.SerializerType;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -24,9 +23,9 @@ public class PropertyConfigUtil {
     // ZK服务的地址
     private static String zkService = "";
     // 服务注册应用名
-    private  static  final String appName4Server = "";
+    private static  String appName4Server = "";
     // 消费方引用应用名
-    private static final String appName4Client = "";
+    private static  String appName4Client = "";
 
     /* 有默认值的配置项 */
     // ZK session超时时间
@@ -38,7 +37,7 @@ public class PropertyConfigUtil {
     // 客户端调用rpc服务线程池的大小
     private static int threadWorkerSize;
     // 默认的负载均衡策略
-    private static int defaultClusterStrategy;
+    private static String defaultClusterStrategy;
     // 服务端序列化协议
     private static SerializerType serverSerializer;
     // 客户端序列化协议
@@ -50,18 +49,36 @@ public class PropertyConfigUtil {
      */
     static {
         InputStream is = PropertyConfigUtil.class.getResourceAsStream(PROPERTY_CLASSPATH);
-        if(null == is){
+        if (null == is) {
             throw new IllegalStateException("soft-rpc.properties cannot be found in the classpath");
         }
         try {
+            // load方法其实就是传进去一个输入流，字节流或者字符流，字节流利用InputStreamReader转化为字符流，然后字符流用
+            // BufferedReader包装，BufferedReader读取properties配置文件，每次读取一行，分割成两个字符串,因为Properties是
+            // Map的子类，然后用put将两个字符串装进Properties对象。
             properties.load(is);
-        } catch (IOException e) {
-            e.printStackTrace();
+            zkService = properties.getProperty("soft.rpc.zookeeper.address");
+            appName4Server = properties.getProperty("soft.rpc.server.app.name");
+            appName4Client = properties.getProperty("soft.rpc.client.app.name");
+            serverSerializer = SerializerType.getByType(properties.getProperty("soft.rpc.server.serializer", "Default"));
+            zkSessionTimeout = Integer.parseInt(properties.getProperty("soft.rpc.zookeeper.session.timeout","500"));
+            zkConnectTimeout = Integer.parseInt(properties.getProperty("soft.rpc.zookeeper.connection.timeout","500"));
+            channelPoolSize = Integer.parseInt(properties.getProperty("soft.rpc.client.channelPoolSize","10"));
+            threadWorkerSize = Integer.parseInt(properties.getProperty("soft.rpc.client.threadWorkers","10"));
+            defaultClusterStrategy = properties.getProperty("soft.rpc.client.clusterStrategy.default","random");
+            clientSerializer = properties.getProperty("soft.rpc.client.serializer","Default");
+        } catch (Throwable throwable) {
+            LOGGER.warn("配置文件加载失败",throwable);
+            throw new RuntimeException(throwable);
+        }finally {
+            if(null != is){
+                try {
+                    is.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
         }
-        // to be finished
-        zkService = properties.getProperty("soft.rpc.zookeeper.address");
-        serverSerializer = SerializerType.getByType(properties.getProperty("soft.rpc.server.serializer","Default"));
-
     }
 
     public static String getPropertyClasspath() {
@@ -120,11 +137,11 @@ public class PropertyConfigUtil {
         PropertyConfigUtil.threadWorkerSize = threadWorkerSize;
     }
 
-    public static int getDefaultClusterStrategy() {
+    public static String getDefaultClusterStrategy() {
         return defaultClusterStrategy;
     }
 
-    public static void setDefaultClusterStrategy(int defaultClusterStrategy) {
+    public static void setDefaultClusterStrategy(String defaultClusterStrategy) {
         PropertyConfigUtil.defaultClusterStrategy = defaultClusterStrategy;
     }
 

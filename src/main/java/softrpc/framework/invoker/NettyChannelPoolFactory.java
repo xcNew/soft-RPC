@@ -47,8 +47,6 @@ public class NettyChannelPoolFactory {
     private NettyChannelPoolFactory() {
     }
 
-    ;
-
     public static NettyChannelPoolFactory getInstance() {
         return INSTANCE;
     }
@@ -64,8 +62,21 @@ public class NettyChannelPoolFactory {
         while (existedChannel < CHANNEL_POOL_SIZE) {
             Channel channel = null;
             while (null == channel) {
+                // 创建失败则重试
                 channel = registerChannel(socketAddress);
             }
+            existedChannel++;
+            // 将创建后的channel加入对应的阻塞队列
+            ArrayBlockingQueue<Channel> channelArrayBlockingQueue = CHANNEL_POOL_MAP.get(socketAddress);
+            if(null == channelArrayBlockingQueue){
+                channelArrayBlockingQueue = new ArrayBlockingQueue<Channel>(CHANNEL_POOL_SIZE);
+                CHANNEL_POOL_MAP.put(socketAddress,channelArrayBlockingQueue);
+            }
+            // offer方法当队列满，而且放入时间超过设定时间时，返回false;
+            //  put方法当队列满时，会调用wait方法，put方法会等待一个空的位置出来，然后再执行insert
+            channelArrayBlockingQueue.offer(channel);
+            long duation = System.currentTimeMillis() - startTime;
+            LOGGER.info("创建channelPool耗时{}ms:[{}:{}]",duation,socketAddress.getHostName(),socketAddress.getPort());
         }
     }
 
@@ -122,4 +133,47 @@ public class NettyChannelPoolFactory {
         }
         return null;
     }
+
+    /**
+     * 根据地址获取对应的ChannelPool缓存队列
+     * @param socketAddress
+     * @return
+     */
+    public ArrayBlockingQueue<Channel> acquire(InetSocketAddress socketAddress){
+        ArrayBlockingQueue<Channel> arrayBlockingQueue = CHANNEL_POOL_MAP.get(socketAddress);
+        if(null == arrayBlockingQueue){
+            registerChannelQueueToMap(socketAddress);
+            return CHANNEL_POOL_MAP.get(socketAddress);
+        }else {
+            return arrayBlockingQueue;
+        }
+    }
+
+    /**
+     * Channel使用完毕之后，回收到阻塞队列
+     * @param arrayBlockingQueue
+     * @param channel
+     * @param inetSocketAddress
+     */
+    public void release(ArrayBlockingQueue<Channel> arrayBlockingQueue,Channel channel,InetSocketAddress inetSocketAddress){
+        if(null == arrayBlockingQueue){
+            return;
+        }
+        // 回收之前判断channel是否可用，若不可用则重新注册一个放入阻塞队列
+        if(null == channel || !channel.isActive() || !channel.isOpen() || !channel.isWritable()){
+            if(channel != null){
+                channel.deregister().syncUninterruptibly().awaitUninterruptibly();
+                channel.closeFuture().syncUninterruptibly().awaitUninterruptibly();
+            }
+            Channel newChannel = null;
+            while(null == newChannel){
+                newChannel = registerChannel(inetSocketAddress);
+            }
+            arrayBlockingQueue.offer(newChannel);
+            return;
+        }
+        arrayBlockingQueue.offer(channel);
+    }
+
+
 }

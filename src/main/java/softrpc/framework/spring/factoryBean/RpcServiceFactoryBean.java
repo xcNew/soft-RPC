@@ -46,9 +46,9 @@ public class RpcServiceFactoryBean implements FactoryBean, InitializingBean {
      */
     private String servicePath;
     /**
-     * 该服务接口实现类的beanId,用于查找对应的class标签内容，即实现类的全限定名
+     * 该服务接口实现类对象,用于查找对应的class标签内容，即实现类的全限定名
      */
-    private String refId;
+    private String ref;
     /**
      * 服务端口
      */
@@ -94,7 +94,7 @@ public class RpcServiceFactoryBean implements FactoryBean, InitializingBean {
         ProviderRegisterMessage provider = new ProviderRegisterMessage();
         provider.setAppName(appName);
         provider.setServicePath(servicePath);
-        provider.setRefId(refId);
+        provider.setRefId(ref);
         // 获取本机ip
         provider.setServerIp(IPutil.localIp());
         provider.setServerPort(serverPort);
@@ -139,12 +139,12 @@ public class RpcServiceFactoryBean implements FactoryBean, InitializingBean {
         this.servicePath = servicePath;
     }
 
-    public String getRefId() {
-        return refId;
+    public String getRef() {
+        return ref;
     }
 
-    public void setRefId(String refId) {
-        this.refId = refId;
+    public void setRef(String ref) {
+        this.ref = ref;
     }
 
     public Integer getServerPort() {

@@ -12,7 +12,7 @@ import softrpc.framework.spring.parser.RpcServiceBeanDefinitionParser;
 public class RpcServiceNamespaceHandler extends NamespaceHandlerSupport{
     @Override
     public void init() {
-        // // soft:service
+        //  给soft:service标签注册对应的BeanDefinitionParser解析器
         registerBeanDefinitionParser("service",new RpcServiceBeanDefinitionParser());
     }
 }

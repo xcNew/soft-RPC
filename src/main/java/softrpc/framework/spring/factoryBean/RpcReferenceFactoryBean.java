@@ -35,7 +35,7 @@ public class RpcReferenceFactoryBean implements FactoryBean, InitializingBean {
     /**
      * 注册中心
      */
-    RegisterCenter registerCenter = RegisterCenter.getInstance();
+    private static RegisterCenter registerCenter = RegisterCenter.getInstance();
 
     /* 标签中必须配置的参数 */
     /**
@@ -62,7 +62,6 @@ public class RpcReferenceFactoryBean implements FactoryBean, InitializingBean {
      * 负载均衡策略
      */
     private String loadBalanceStrategy = "default";
-
 
     /**
      * 生成soft:reference标签所引用的服务接口的代理对象
@@ -130,10 +129,6 @@ public class RpcReferenceFactoryBean implements FactoryBean, InitializingBean {
 
     public RegisterCenter getRegisterCenter() {
         return registerCenter;
-    }
-
-    public void setRegisterCenter(RegisterCenter registerCenter) {
-        this.registerCenter = registerCenter;
     }
 
     public Class<?> getTargetInterface() {

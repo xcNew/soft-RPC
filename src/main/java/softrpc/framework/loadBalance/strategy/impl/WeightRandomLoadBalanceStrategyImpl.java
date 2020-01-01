@@ -20,6 +20,6 @@ public class WeightRandomLoadBalanceStrategyImpl implements LoadBalanceStategy {
         //根据加权创建服务索引列表:比如权重为3，则该服务的索引在列表出现三次。建立该列表后对其进行随机查找
         List<Integer> indexList = LoadBalanceEngine.getIndexListByWeight(providerRegisterMessages);
         int index = RandomUtils.nextInt(0,indexList.size());
-        return providerRegisterMessages.get(index);
+        return providerRegisterMessages.get(indexList.get(index));
     }
 }

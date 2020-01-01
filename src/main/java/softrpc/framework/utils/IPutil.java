@@ -3,6 +3,7 @@ package softrpc.framework.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.apache.commons.lang3.StringUtils;
+
 import java.net.*;
 import java.util.Enumeration;
 import java.util.List;
@@ -17,7 +18,7 @@ public class IPutil {
 
     private static String hostIp;
 
-    public static String localIp(){
+    public static String localIp() {
         return hostIp;
     }
 

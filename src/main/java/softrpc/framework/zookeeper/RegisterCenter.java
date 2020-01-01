@@ -68,7 +68,7 @@ public class RegisterCenter implements RegisterCenter4Governance, RegisterCenter
     /**
      * 服务注册使用的根节点路径
      */
-    private static final String ROOT_PATH = "zookeeper/soft-rpc";
+    private static final String ROOT_PATH = "/zookeeper/soft-rpc";
 
     /**
      * 每个服务下标识服务提供者的父节点名字
@@ -164,11 +164,14 @@ public class RegisterCenter implements RegisterCenter4Governance, RegisterCenter
                 // 否则直接获取该服务结点下的所有临时结点，即provider
                 List<String> providers = zkClient.getChildren(servicePath);
                 // 将结点内容从json string还原成ProviderRegisterMessage以便存入list
+                providerRegisterMessages = new ArrayList<>();
                 for(String each : providers){
+                    System.out.println(JSON.parseObject(each,ProviderRegisterMessage.class).toString()+"fadsfadfdfadf-----------------------------");
                     providerRegisterMessages.add(JSON.parseObject(each,ProviderRegisterMessage.class));
                 }
                 // 注册信息缓存至本地Map
                 PROVIDER_MAP.put(nameSpace,providerRegisterMessages);
+
             }
             long duration = System.currentTimeMillis() - startTime;
             LOGGER.info("获取provider列表耗时{}ms:[{}]",duration,nameSpace);

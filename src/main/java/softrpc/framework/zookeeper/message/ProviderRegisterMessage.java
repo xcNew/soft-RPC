@@ -118,4 +118,19 @@ public class ProviderRegisterMessage implements Serializable{
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
+
+    @Override
+    public String toString() {
+        return "ProviderRegisterMessage{" +
+                "appName='" + appName + '\'' +
+                ", servicePath='" + servicePath + '\'' +
+                ", refId='" + refId + '\'' +
+                ", serverIp='" + serverIp + '\'' +
+                ", serverPort=" + serverPort +
+                ", timeout=" + timeout +
+                ", workThread=" + workThread +
+                ", weight=" + weight +
+                ", groupName='" + groupName + '\'' +
+                '}';
+    }
 }

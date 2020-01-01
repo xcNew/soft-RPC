@@ -6,7 +6,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.ServerSocketChannel;
+import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
@@ -63,9 +63,9 @@ public class NettyServer {
                 .childOption(ChannelOption.TCP_NODELAY,true)
                 .handler(new LoggingHandler(LogLevel.INFO))
                 // 装配子通道的handler流水线。泛型参数代表需要初始化的通道类型
-                .childHandler(new ChannelInitializer<ServerSocketChannel>() {
+                .childHandler(new ChannelInitializer<SocketChannel>() {
                     @Override
-                    protected void initChannel(ServerSocketChannel serverSocketChannel) throws Exception {
+                    protected void initChannel(SocketChannel serverSocketChannel) throws Exception {
                         // 向channelPipline注册消息解码器
                         serverSocketChannel.pipeline().addLast(new NettyDecodeHandler(RequestMessage.class));
                         // 向channelPipline注册消息编码器

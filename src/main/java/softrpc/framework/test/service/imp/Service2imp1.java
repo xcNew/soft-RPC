@@ -14,6 +14,7 @@ public class Service2imp1 implements Service2 {
 
     @Override
     public String sayMessage(String message) {
+        System.out.println(message);
         return String.format("[Service2imp1] The message you have given is %s",message);
     }
 }

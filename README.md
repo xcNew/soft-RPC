@@ -48,15 +48,15 @@
 
 本项目在`softrpc.framework.test.service`提供了简单的调用RPC服务测试用例，直接RUN即可运行测试。以下简单介绍如何将本项目在你的电脑上RUN起来：
 
-1. 参考[此处](https://www.cnblogs.com/xubao/p/10693202.html)，在Windows环境下安装和部署[zookeeper](https://note.youdao.com/ynoteshare1/index.html?id=65dd9de0a5ad1a2b2858d4295d523e22&type=note)，找到bin文件夹下面的zkServer.cmd服务，运行启动。注意使用zookeeper时不要关闭CMD窗口。
+1. 参考[此处](https://www.cnblogs.com/xubao/p/10693202.html)，在Windows环境下安装和部署zookeeper,找到bin文件夹下面的zkServer.cmd服务，运行启动。注意使用zookeeper时不要关闭CMD窗口。
 
 2. clone本项目到本地，使用IDEA打开，配置maven和本地仓库，等待依赖自动导入完成。
 
 3. 找到`softrpc.framework.test.service.MainServer`，运行main方法，可以看到控制台打印服务端的启动日志；再找到`softrpc.framework.test.service.MainClient`，同样运行它的main方法，可以看到控制台打印客户端的运行日志。
 
-   ![image-20200104014828373](C:\Users\JamesBond\AppData\Roaming\Typora\typora-user-images\image-20200104014828373.png)
+   ![1](note/img/1.png)
 
-   ![image-20200104015236748](C:\Users\JamesBond\AppData\Roaming\Typora\typora-user-images\image-20200104015236748.png)
+   ![2](note/img/1.png)
 
 
 ### 自定义RUN
@@ -112,7 +112,7 @@ soft.rpc.client.app.name=test
                   groupName="default"/>
 ```
 
-- id：不同的simple:service要求id属性不一样
+- id：不同的soft:service要求id属性不一样
 - appName：该属性如果缺失，就会采用全局配置文件 soft-rpc.properties 中的 soft.rpc.server.app.name 值，如果两者都缺失，则抛出异常
 - interface：接口的全限定名（appName + interface是该服务在注册中心的key）
 - ref：该接口的实现类bean标签id
@@ -169,7 +169,7 @@ soft.rpc.client.app.name=test
 - id：不同的soft:reference要求id属性不一样
 - appName：该属性如果缺失，就会采用全局配置文件soft.properties 中的 soft.rpc.client.app.name 值，如果两者都缺失，就会抛出异常
 - interface：接口的全限定名（appName + interface是该服务在注册中心的key）
-- clusterStrategy：采用的载均衡策略，缺省时就使用全局配置文件 soft-rpc.properties 中的 simple.rpc.client.clusterStrategy.default 值， 如果两者都缺省，就使用框架的默认值(Random)
+- clusterStrategy：采用的载均衡策略，缺省时就使用全局配置文件 soft-rpc.properties 中的 soft.rpc.client.clusterStrategy.default 值， 如果两者都缺省，就使用框架的默认值(Random)
 - timeout：服务超时时间
 - groupName：应用所属分组名称， 本项目未用到。如果要在ZK中设置更复杂的注册路径，以实现服务治理相关功能，则可以使用
 
@@ -189,7 +189,7 @@ soft.rpc.client.app.name=test
 
 ## Soft-RPC开发说明
 
-[这里]()教你如何从零开发Soft-RPC框架，介绍本项目各个功能模块的实现要点，开发思路，以及一些学习笔记。
+[这里](note/note.md)教你如何从零开发Soft-RPC框架，介绍本项目各个功能模块的实现要点，开发思路，以及一些学习笔记。
 
 
 

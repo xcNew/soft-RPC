@@ -25,6 +25,7 @@ public class MainClient {
     }
 
     public static void main(String[] args) {
+        int $idname;
         service1.sayHi();
         String s = service2.sayMessage("ZJU");
         System.out.println(s);

@@ -65,6 +65,7 @@ public class RpcReferenceFactoryBean implements FactoryBean, InitializingBean {
 
     /**
      * 生成soft:reference标签所引用的服务接口的代理对象
+     * 返回由FactoryBean创建的bean实例，如果isSingleton()返回true，则该实例会放到Spring容器中单实例缓存池中
      *
      * @return 服务接口的代理对象
      */
@@ -75,6 +76,7 @@ public class RpcReferenceFactoryBean implements FactoryBean, InitializingBean {
 
     /**
      * 声明接口代理对象的类型
+     * 返回FactoryBean创建的bean类型
      *
      * @return
      */

@@ -10,8 +10,8 @@
 
 ### 配置文件
 
-- 编写xsd文件，使用NamespaceHandler和BeanDefinitionParser进行解析，从而实现自定义配置标签，支持高度自定义、可优化
-- 【soft-rpc.properties】进行全局配置，主要是对整个项目相关的参数进行配置，如zk超时时间，线程池大小等；【rpc-reference.xml】利用自定义标签进行服务消费者的相关参数配置；【rpc-service】利用自定义标签进行服务提供者相关参数配置
+-  使用自定义配置标签，支持高度自定义、可优化
+- 【soft-rpc.properties】进行全局配置，如zk超时时间，线程池大小等；【rpc-reference.xml】利用自定义标签进行服务消费者的相关参数配置；【rpc-service】利用自定义标签进行服务提供者相关参数配置
 - 大部分配置项支持默认配置和容错配置
 
 ### 集成Spring
@@ -27,7 +27,7 @@
 
 ### 负载均衡策略
 
-- 提供Random(随机)/WeightRandom(加权随机)/Polling（轮询)/WeightPolling(加权轮询)/Hash(IP哈希)5中负载均衡算法的选用
+- 提供Random(随机)/WeightRandom(加权随机)/Polling（轮询)/WeightPolling(加权轮询)/Hash(IP哈希)五种负载均衡算法的选用
 - 支持客户端对负载均衡策略进行指定：在rpc-reference.xml中各客户端可配置不同的负载均衡策略
 
 ### Zookeeper注册中心

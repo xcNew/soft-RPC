@@ -166,7 +166,6 @@ public class RegisterCenter implements RegisterCenter4Governance, RegisterCenter
                 // 将结点内容从json string还原成ProviderRegisterMessage以便存入list
                 providerRegisterMessages = new ArrayList<>();
                 for(String each : providers){
-                    System.out.println(JSON.parseObject(each,ProviderRegisterMessage.class).toString()+"fadsfadfdfadf-----------------------------");
                     providerRegisterMessages.add(JSON.parseObject(each,ProviderRegisterMessage.class));
                 }
                 // 注册信息缓存至本地Map

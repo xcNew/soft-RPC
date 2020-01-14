@@ -57,7 +57,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter{
             ResponseMessage responseMessage = null;
             boolean acquire = false;
             try {
-                // 利用semaphore实现服务端限流
+                // 利用semaphore实现服务端限流,因为反射操作执行效率低下，如果大量反射同时执行，将占用资源
                 acquire = semaphore.tryAcquire(consumeTimeout, TimeUnit.MILLISECONDS);
                 if(acquire){
                     // 成功则发起反射调用，调用服务

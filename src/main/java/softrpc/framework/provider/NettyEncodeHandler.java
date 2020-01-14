@@ -35,7 +35,7 @@ public class NettyEncodeHandler extends MessageToByteEncoder {
      * @throws Exception
      */
     @Override
-    protected void encode(ChannelHandlerContext channelHandlerContext, Object in, ByteBuf out) throws Exception {
+    public void encode(ChannelHandlerContext channelHandlerContext, Object in, ByteBuf out) throws Exception {
         long startTime = System.currentTimeMillis();
         // 获取序列化协议code
         int serializerCode = serializeType.getSerializeCode();

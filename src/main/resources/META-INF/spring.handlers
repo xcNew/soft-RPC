@@ -1,6 +1,6 @@
 # 需要编写NamespaceHandler和BeanDefinitionParser完成解析工作
 # 表示当使用到名为"http://www.soft-rpc.com/schema/soft-reference"的schema引用时，会通过
- softrpc.framework.spring.parserRpcReferenceBeanDefinitionParser来完成解析
+# softrpc.framework.spring.parserRpcReferenceBeanDefinitionParser来完成解析
 http\://www.soft-rpc.com/schema/soft-reference=softrpc.framework.spring.handler.RpcReferenceNamespaceHandler
 # service同理
 http\://www.soft-rpc.com/schema/soft-service=softrpc.framework.spring.handler.RpcServiceNamespaceHandler

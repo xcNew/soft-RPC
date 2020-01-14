@@ -40,7 +40,7 @@ public class NettyDecodeHandler extends ByteToMessageDecoder {
      * @throws Exception
      */
     @Override
-    protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
+    public void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
         long startTime = System.currentTimeMillis();
         // 消息头部长度8字节=序列化协议int + 消息长度int
         if(in.readableBytes() < 8){

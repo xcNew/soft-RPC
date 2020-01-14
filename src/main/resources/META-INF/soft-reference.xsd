@@ -4,9 +4,7 @@
             xmlns:beans="http://www.springframework.org/schema/beans"
             targetNamespace="http://www.soft-rpc.com/schema/soft-reference"
             elementFormDefault="qualified">
-
     <xsd:import namespace="http://www.springframework.org/schema/beans"/>
-
     <xsd:element name="reference">
         <xsd:complexType>
             <xsd:complexContent>
@@ -21,7 +19,6 @@
             </xsd:complexContent>
         </xsd:complexType>
     </xsd:element>
-
 </xsd:schema>
 
 

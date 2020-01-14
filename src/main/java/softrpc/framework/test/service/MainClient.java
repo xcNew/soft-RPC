@@ -18,6 +18,8 @@ public class MainClient {
     static {
         long startTime = System.currentTimeMillis();
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("rpc-reference.xml");
+        // 通过 getBean()方法返回的不是FactoryBean本身，而是FactoryBean#getObject()方法所返回的对象，相当于
+        // FactoryBean#getObject()代理了getBean()方法
         service1 = (Service1)context.getBean("Service1");
         service2 = (Service2) context.getBean("Service2");
         long duration = System.currentTimeMillis() - startTime;

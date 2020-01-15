@@ -684,7 +684,7 @@ spring.handlers 文件的内容如下：
 http\://www.soft-rpc.com/schema/soft-reference=softrpc.framework.spring.handler.RpcReferenceNamespaceHandler
 ```
 
-表示当使用到名为"http://www.soft-rpc.com/schema/soft-reference"的schema引用时，会通过softrpc.framework.spring.parserRpcReferenceBeanDefinitionParser来完成解析
+表示当使用到对应的命名空间时，会通过softrpc.framework.spring.handler.RpcReferenceNamespaceHandler来完成解析
 
 spring.schemas文件的内容如下
 
@@ -696,7 +696,7 @@ http\://www.soft-rpc.com/schema/soft-reference.xsd=META-INF/soft-reference.xsd
 
 Spring中自定义标签所需的完整文件如下：spring.schemas+xxx.xsd+spring.handlers+xxHandler.java+XxParser.java+XxFactoryBean.java
 
-<img src="img\9.png" alt="image-20191110180140681" style="zoom:50%;" />
+<img src="img\9.png" alt="image-20191110180140681" style="zoom:40%;" />
 
 
 

@@ -11,7 +11,7 @@
 ### 配置文件
 
 -  使用自定义配置标签，支持高度自定义、可优化
-- 【soft-rpc.properties】进行全局配置，如zk超时时间，线程池大小等；【rpc-reference.xml】利用自定义标签进行服务消费者的相关参数配置；【rpc-service】利用自定义标签进行服务提供者相关参数配置
+- 【soft-rpc.properties】进行全局配置，如zk超时时间，线程池大小等；【rpc-reference.xml】利用自定义标签进行服务消费者的相关参数配置；【rpc-service.xml】利用自定义标签进行服务提供者相关参数配置
 - 大部分配置项支持默认配置和容错配置
 
 ### 集成Spring

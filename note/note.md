@@ -242,13 +242,15 @@ channelFuture.addListener(new ChannelFutureListener() {
         countDownLatch.countDown();
     }
 });
+
+// 阻塞等待Channel创建的结果
+countDownLatch.await();
+
 if (isSuccessHolder.get(0)) {
     return newChannel;
  }else{
     return null;
 }
-// 阻塞等待Channel创建的结果
-countDownLatch.await();
 ```
 
 创建channelPool时候，会不断调用上述registerChannel方法产生新的channel放入BlockingQueue，由于channe的创建很可能失败，所以创建每一个channel时候都需要使用一个外部循环，直到channel创建成功为止：

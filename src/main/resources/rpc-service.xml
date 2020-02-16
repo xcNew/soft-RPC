@@ -6,7 +6,9 @@
         http://www.soft-rpc.com/schema/soft-service http://www.soft-rpc.com/schema/soft-service.xsd">
 
     <!--发布远程服务-->
+    <!-- spring将Service2imp1实现类托管 -->
     <bean id="Service2imp1" class="softrpc.framework.test.service.imp.Service2imp1"/>
+
     <soft:service id="Service12Register1"
                   interface="softrpc.framework.test.service.Service2"
                   timeout="2000"
@@ -18,6 +20,7 @@
                   groupName="default"/>
     <!--同一主机支持对同一接口发布不同的实现类-->
     <bean id="Service2imp2" class="softrpc.framework.test.service.imp.Service2imp2"/>
+
     <soft:service id="Service12Register2"
                   interface="softrpc.framework.test.service.Service2"
                   timeout="2000"

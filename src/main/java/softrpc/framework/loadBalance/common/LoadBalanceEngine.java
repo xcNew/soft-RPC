@@ -56,8 +56,8 @@ public class LoadBalanceEngine {
             return null;
         }
         ArrayList<Integer> list = new ArrayList<>();
+        int index = 0;
         for (ProviderRegisterMessage each : providerRegisterMessages) {
-            int index = 0;
             int weight = each.getWeight();
             while (weight-- > 0) {
                 list.add(index);

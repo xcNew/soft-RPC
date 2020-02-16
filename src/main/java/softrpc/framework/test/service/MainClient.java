@@ -27,9 +27,20 @@ public class MainClient {
     }
 
     public static void main(String[] args) {
-        int $idname;
-        service1.sayHi();
-        String s = service2.sayMessage("ZJU");
-        System.out.println(s);
+        int executeOfService1 = 0;
+        int executeOfService2 = 0;
+        String message = "SOFT";
+        String res1 = String.format("[Service2imp1] The message you have given is %s",message);
+        String res2 = String.format("[Service2imp2] The message you have given is %s",message);
+        for(int i = 0;i < 1000;i++){
+            String str = service2.sayMessage(message);
+            if(str.equals(res1)){
+                executeOfService1 ++;
+            } else if (str.equals(res2)) {
+                executeOfService2 ++;
+            }
+        }
+        LOGGER.info("权重为50的SayServiceImpl1被调用{}次,权重为100的SayServiceImpl2被调用{}次",
+                executeOfService1, executeOfService2);
     }
 }
